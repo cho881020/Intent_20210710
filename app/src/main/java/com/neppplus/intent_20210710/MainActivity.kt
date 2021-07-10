@@ -36,5 +36,17 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+
+        sendContentBtn.setOnClickListener {
+
+            val input = messageEdt.text.toString()
+
+            val myIntent = Intent(this, ViewContentActivity::class.java)
+            myIntent.putExtra("content", input)
+            startActivity(myIntent)
+
+        }
+
+
     }
 }
