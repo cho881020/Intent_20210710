@@ -19,5 +19,22 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+        sendMessageBtn.setOnClickListener {
+
+//            입력된 문구 변수에 저장.
+            val inputMessage = messageEdt.text.toString()
+
+//            메세지 조회 화면으로 넘어가기.
+
+            val myIntent = Intent(this, ViewMessageActivity::class.java)
+
+//            출발 하기 전에 짐을 첨부하고나서
+            myIntent.putExtra("message", inputMessage)
+
+//            비행기 출발
+            startActivity(myIntent)
+
+        }
+
     }
 }
