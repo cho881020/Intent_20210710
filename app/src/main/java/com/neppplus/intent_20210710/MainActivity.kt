@@ -1,5 +1,6 @@
 package com.neppplus.intent_20210710
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -59,4 +60,21 @@ class MainActivity : AppCompatActivity() {
 
 
     }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == REQ_CODE_NICKNAME) {
+
+            if (resultCode == Activity.RESULT_OK) {
+
+                val newNickname = data?.getStringExtra("nick")
+                nicknameTxt.text = newNickname
+
+            }
+
+        }
+
+    }
+
 }
